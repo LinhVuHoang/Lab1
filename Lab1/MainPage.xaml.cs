@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using Lab1.Models;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Lab1
@@ -27,12 +27,21 @@ namespace Lab1
             this.InitializeComponent();
         }
 
+       // private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+          //  string email = input1.Text;
+            //string tieude = input2.Text;
+            //string noidung = input3.Text;
+            //TxtBlock.Text += email + " - " + tieude + " - " + noidung + "\n";
+      //  }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string email = input1.Text;
             string tieude = input2.Text;
             string noidung = input3.Text;
-            TxtBlock.Text += email + " - " + tieude + " - " + noidung + "\n";
+            User us = new User(email,tieude,noidung);
+            ListUsers.Items.Add(us);
+
         }
     }
 }
